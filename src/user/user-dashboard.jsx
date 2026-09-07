@@ -14,7 +14,7 @@ function UserDashboard() {
 
   useEffect(()=>{
 
-    const res = getUserByAccessToken(localStorage.getItem('accessToken'));
+    const res = getUserByAccessToken();
     res.then((response)=>{
       setUserData(response.data?.data);
     }).catch((error)=>{

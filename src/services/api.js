@@ -53,8 +53,10 @@ api.interceptors.response.use(
         }
 
         localStorage.removeItem("accessToken");
+        window.location.href = "/login";
       } catch (refreshError) {
         localStorage.removeItem("accessToken");
+        window.location.href = "/login";
         return Promise.reject(refreshError);
       }
     }

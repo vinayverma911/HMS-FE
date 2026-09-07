@@ -11,7 +11,7 @@ const loginUser = async ({email, password}) => {
   }
 };
 
-const getUserByAccessToken = async (accessToken) =>{
+const getUserByAccessToken = async () =>{
 
   try{
     const response = await api.post('/user/fetchuserbytoken');
