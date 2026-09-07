@@ -1,0 +1,173 @@
+.register-container {
+  width: 100%;
+}
+
+/* ---------- Header ---------- */
+
+.register-container .auth-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.register-container .auth-header h2 {
+  font-size: 30px;
+  color: #111827;
+  margin: 0 0 7px;
+}
+
+.register-container .auth-header p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ---------- Form ---------- */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.register-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.register-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.register-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.register-form label span {
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+/* ---------- Inputs ---------- */
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+
+  background: #fff;
+  color: #111827;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.register-form input::placeholder {
+  color: #9ca3af;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.register-form select {
+  cursor: pointer;
+}
+
+/* ---------- Validation ---------- */
+
+.register-form .input-error {
+  border-color: #dc2626 !important;
+}
+
+.register-form .input-error:focus {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+}
+
+.register-form .field-error {
+  color: #dc2626;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+/* ---------- Submit Button ---------- */
+
+.register-form .submit-btn {
+  width: 100%;
+  height: 46px;
+
+  margin-top: 4px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.register-form .submit-btn:hover {
+  background: #1d4ed8;
+}
+
+.register-form .submit-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.register-form .submit-btn:disabled:hover {
+  background: #9ca3af;
+}
+
+/* ---------- Footer ---------- */
+
+.register-container .auth-footer {
+  text-align: center;
+  margin-top: 20px;
+
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.register-container .auth-footer a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-container .auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  .register-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
