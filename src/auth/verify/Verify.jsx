@@ -1,7 +1,7 @@
 import "./Verify.css";
 import { useForm } from "react-hook-form";
 import { useSearchParams,useNavigate } from "react-router-dom";
-import { verifyEmail } from "../../services/auth/service.user.js";
+import { verifyEmail } from "../../services/auth/service.authuserservice.js";
 
 function Verify() {
   const [searchParams] = useSearchParams();

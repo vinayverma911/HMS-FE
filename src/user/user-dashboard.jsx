@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { getUserByAccessToken } from "../services/auth/service.user.js";
+import { getUserByAccessToken } from "../services/user/service.user.js";
 import "./user-dashboard.css";
 
 function UserDashboard() {

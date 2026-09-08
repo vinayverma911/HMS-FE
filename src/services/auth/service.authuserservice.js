@@ -11,18 +11,6 @@ const loginUser = async ({email, password}) => {
   }
 };
 
-const getUserByAccessToken = async () =>{
-
-  try{
-    const response = await api.post('/user/fetchuserbytoken');
-    return response;
-  }catch(error){
-    console.log("Error in getUserByAccessToken ",error);
-    throw error;
-  }
-
-}
-
 const sendOtp = async (email) => {
   try {
     const response = await api.post('/user/send-otp', { email }, { skipAuth: true });
@@ -51,32 +39,11 @@ const registerUser = async (data) => {
   }
 };
 
-const checkEmailExists = async (email) => {
-  try {
-    const response = await api.post(`/user/check-email`,  email );
-    return response;
-  } catch (error) {
-    // throw new Error(error.response?.data?.message || 'Email check failed');
-    throw error; // Re-throw the original error to be handled in the calling function
-  }
-};
-
-const checkPhoneExists = async (phone) => {
-  try {
-    const response = await api.post(`/user/check-phone`, phone);
-    return response;
-  } catch (error) {
-    // throw new Error(error.response?.data?.message || 'Phone check failed');
-    throw error; // Re-throw the original error to be handled in the calling function
-  }
-};
-
 export default registerUser;    
 
 export {
   loginUser,
   sendOtp,
   verifyEmail,
-  registerUser,
-  getUserByAccessToken
+  registerUser
 };

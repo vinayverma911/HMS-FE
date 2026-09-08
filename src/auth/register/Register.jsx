@@ -1,7 +1,7 @@
 import "./Register.css";
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
-import {sendOtp, registerUser} from "../../services/auth/service.user.js";
+import {sendOtp, registerUser} from "../../services/auth/service.authuserservice.js";
 
 function Register() {
   const {

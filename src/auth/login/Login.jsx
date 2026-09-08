@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { loginUser, sendOtp } from '../../services/auth/service.user.js';
+import { loginUser, sendOtp } from '../../services/auth/service.authuserservice.js';
 
 function Login() {
   const {
