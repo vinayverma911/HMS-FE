@@ -6,24 +6,29 @@ import "./user-dashboard.css";
 function UserDashboard() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const closeSidebar = () => {
     setSidebarOpen(false);
   };
 
-  useEffect(()=>{
-
-    const res = getUserByAccessToken();
-    res.then((response)=>{
-      setUserData(response.data?.data);
-    }).catch((error)=>{
-      console.log("Error in UserDashboard.jsx 20 : ",error);
-    })
-    console.log("Response data : ",res)
-
-  } 
-  ,[])
+  useEffect(() => {
+    getUserByAccessToken()
+      .then((response) => {
+        setUserData(response.data?.data ?? null);
+        setError(null);
+      })
+      .catch((err) => {
+        console.log("Error in UserDashboard.jsx : ", err);
+        setUserData(null);
+        setError(err.response?.data?.message || "Failed to load user");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <div className="dashboard-layout">
@@ -73,7 +78,7 @@ function UserDashboard() {
       {/* Main Content */}
       <main className="dashboard-main">
         <div className="dashboard-content">
-          <Outlet />
+          <Outlet context={{ userData, isLoading, error }} />
         </div>
       </main>
     </div>
