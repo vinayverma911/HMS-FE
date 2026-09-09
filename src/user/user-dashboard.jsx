@@ -78,7 +78,7 @@ function UserDashboard() {
       {/* Main Content */}
       <main className="dashboard-main">
         <div className="dashboard-content">
-          <Outlet context={{ userData, isLoading, error }} />
+          <Outlet context={{ userData, setUserData, isLoading, error }} />
         </div>
       </main>
     </div>

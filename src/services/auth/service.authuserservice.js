@@ -22,7 +22,7 @@ const sendOtp = async (email) => {
 
 const verifyEmail = async ({email, otp}) => {
   try {
-    const response = await api.post('/user/verify', { email, otp }, { skipAuth: true });
+    const response = await api.post('user/verify', { email, otp }, { skipAuth: true });
     return response; // Return the status code directly
   } catch (error) {
     throw error; 

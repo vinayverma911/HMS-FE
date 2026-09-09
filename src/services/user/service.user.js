@@ -30,8 +30,18 @@ const checkPhoneExists = async (phone) => {
   }
 };
 
+const updateUser = async (data) => {
+  try {
+    const response = await api.post('/user/updateuser', data);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export {
   getUserByAccessToken,
   checkEmailExists,
-  checkPhoneExists
+  checkPhoneExists,
+  updateUser
 };
