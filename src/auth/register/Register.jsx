@@ -47,6 +47,7 @@ function Register() {
           });
         }
 
+        
         if (status === 409) {
           if (code === "EMAIL_ALREADY_EXISTS") {
             setError("email", {
