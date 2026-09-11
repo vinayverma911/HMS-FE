@@ -10,6 +10,8 @@ dist-ssr/
 .env.*
 !.env.example
 *.local
+.gitignore
+CLAUDE.md
 
 # Logs
 logs/
